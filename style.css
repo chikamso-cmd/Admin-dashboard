@@ -1,0 +1,137 @@
+
+:root {
+  /* Backgrounds */
+  --bg-body: #F9FAFB;
+  --bg-sidebar: #4036c6;
+  --bg-table-header: #374151;
+  --bg-hover: #F3F4F6;
+
+  /* Text Colors */
+  --logo-color: #ff9aba;
+  --text-primary: #111827;
+  --text-muted: #6B7280;
+  --text-light: #FFFFFF;
+
+  /* Accent Colors */
+  --primary: #2563EB;
+  --success: #10B981;
+  --danger: #B42424;
+
+  /* Borders */
+  --border-color: #ff9aba;
+
+  /* Focus Ring */
+  --focus-ring: #2563EB;
+}
+#sidebar{
+    background: var(--bg-sidebar);
+    padding: 20px 0px;
+    width: 150px;
+}
+#sidebar h3{
+color: var(--logo-color);
+font-size: 15px;
+/* text-align: center; */
+font-family: Roboto,sans-serif;
+font-weight: 500;
+margin-left: 30px;
+}
+.nav li{
+    display: flex;
+    gap: 5px;
+    color: var(--bg-body);
+    text-transform: capitalize;
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+    /* align-items: center; */
+    /* text-align: center; */
+}
+.dashboard{
+    margin-top: 20px;
+}
+.nav>li>span{
+font-size: 12px;
+line-height: 1 !important;
+}
+.admin-links{
+    margin-top: 10px;
+}
+.admin-links>li>span{
+font-size: 12px;
+line-height: -1 !important;
+}
+#wrapper {
+  min-height: 100vh;
+}
+.logout {
+  margin-top: 43vh
+}
+.logout>li>span{
+ font-size: 12px;   
+}
+.navbar{
+    border-bottom: var(--text-muted);
+}
+.admin>.adminprofile{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    overflow: hidden;
+    align-items: center;
+}
+.admin>div>img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.search{
+    /* background: #000; */
+    display: flex;
+    width: 40%;
+    padding: 10px 0px;
+    align-items: center;
+    position: relative;
+}
+.search>input{
+    width: 70%;
+    height: 35px;
+    padding: 0px 30px 0px 10px;
+    border-radius: 50px;
+    outline: 0;
+    border: 0;
+    background: var(--bg-hover);
+}
+.search>span{
+    background: var(--bg-hover);
+    padding: 7px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-size: 20px;
+    width: 45px;
+    margin-left: -45px;
+    align-items: center;
+    text-align: center;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+.search>input:focus-visible{
+background: var(--bg-hover);
+}
+.search>input::placeholder{
+font-size: 13px;
+padding: 0;
+}
+.left{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.admin-title{
+    text-align: center;
+}
+.left>span{
+    cursor: pointer;
+}
+

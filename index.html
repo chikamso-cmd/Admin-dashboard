@@ -74,7 +74,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper" class="w-100">
       <!-- Top Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <div class="container-fluid d-flex">
            <div class="search">
              <input type="search" name="search" id="search" placeholder="Search">
@@ -106,45 +106,109 @@
       <!-- Main Content -->
       <div class="container-fluid mt-4">
         <h2 class="fs-6 fw-bolder">Employee Management List </h2>
-        <div class="filter d-flex gap-3">
+        <div class="filter">
             <div class="search">
-             <input type="search" name="search" id="search" placeholder="Search here...">
+             <input type="search" name="search" id="filter" placeholder="Search here...">
                 <span class="material-symbols-outlined">search</span>
             </div>
-            <div class="roles">
-                <select name="roles" id="roles">
-                    <option value=""></option>
-                    <option value="Admin">Admin</option>
-                    <option value="Admin_Officer">Admin_Officer</option>
-                    <option value="Manager">Manager</option>
-                    <option value="Office Assistant">Office Assistant</option>
-                    <option value="Clerk">Clerk</option>
-                    <option value="Director">Director</option>
-                    <option value="Senior Manager">Senior Manager</option>
-                    <option value="Security">Security</option>
-                    <option value="Developer">Developer</option>
-                </select>
-            </div>
-
-            <div class="datejoined">
-                
-            </div>
-            <button>
+           
+           <!-- Create User Modal -->
+            <button class="btn mt-3 mb-2" data-bs-toggle="modal" data-bs-target="#createUserModal">
                 <span class="material-symbols-outlined">add</span>
-                Create User
-            </button>
+                Create User</button>
+ <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form id="create-user-form">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fs-6" id="createUserModalLabel">Create New User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- upload image  -->
+          <div class="uploadimage">
+            <div class="image-container">
+                 <img 
+            src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
+            alt="User Profile"
+            class="profile-pic" id="user-id"
+          />
+            </div>
+            <span>maximum image size <strong>5mb</strong></span>
+            <button class="btn mt-3 mb-2" data-bs-toggle="modal" data-bs-target="#createUserModal">
+                <span class="material-symbols-outlined">upload_file</span>
+                Upload Image</button>
+          </div>
+
+          <!-- form section -->
+          <div class="mb-3 d-flex gap-3">
+                <div class="form">
+            <label for="user-name">Name</label>
+            <input type="text" id="user-name" required />
+            </div>
+                <div class="form">
+            <label for="email">Email</label>
+            <input type="text" id="email" autocomplete="on" required />
+            </div>
+          </div>
+
+          <div class="mb-3 d-flex gap-3">
+           <div class="form">
+             <label for="contact">Contact</label>
+            <input type="text" id="contact" required />
+           </div>
+           <div class="form">
+             <label for="age">Age</label>
+            <input type="text" id="age" required />
+           </div>
+          </div>
+
+          <div class="mb-3 d-flex gap-3">
+            <select id="user-status" required>
+              <option value="">Select Staus</option>
+              <option value="Admin">Active</option>
+              <option value="Editor">Not Active</option>
+            </select>
+
+            <select id="user-role" required>
+              <option value="">Select Role</option>
+              <option value="Admin">Admin</option>
+              <option value="Editor">Editor</option>
+              <option value="Viewer">Viewer</option>
+              <option value="Viewer">Developer</option>
+              <option value="Viewer">Manager</option>
+              <option value="Viewer">Assistant</option>
+              <option value="Viewer">Director</option>
+              <option value="Viewer">Writer</option>
+              <option value="Viewer">Head of Resources</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn1 mt-3 mb-2" data-bs-toggle="modal" data-bs-target="#createUserModal">Cancel</button>
+          <button class="btn mt-3 mb-2" data-bs-toggle="modal" data-bs-target="#createUserModal">Apply</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div> 
+
         </div>
 
         <div id="user-table-container">
           <!-- Table will be injected here via JS -->
-           <table class="table table-bordered table-hover">
-  <thead class="table-dark">
+           <table class="">
+  <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
       <th>Email</th>
+      <th>Age</th>
+      <th>Contact</th>
+      <th>Date Joined</th>
       <th>Role</th>
-      <th>Actions</th>
+      <th>Status</th>
     </tr>
     <!-- <td>
  
@@ -153,43 +217,108 @@
   </thead>
   <tbody id="user-table-body">
     <!-- Rows will be injected via JS -->
+    <tr>
+       <td>
+          <div class="image-container-data">
+              <img 
+          src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
+          alt="User Profile"
+          class="profile-pic" id="user-id"
+        />
+          </div>
+       </td>
+       <td>Emmanuel Okeke Justus</td>
+       <td>emmanueljudtud@example.com</td>
+       <td>23</td>
+       <td>+233-123-456-789</td>
+       <td>22/05/2021</td>
+       <td>Admin</td>
+       <td>Active</td>
+       <td>
+          <div class="action-btn">
+             <span class="material-symbols-outlined visibility">visibility</span>
+             <span class="material-symbols-outlined edit">border_color</span>
+             <span class="material-symbols-outlined delete">delete</span>
+          </div>
+       </td>
+    </tr>
+    <tr>
+       <td>
+          <div class="image-container-data">
+              <img 
+          src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
+          alt="User Profile"
+          class="profile-pic" id="user-id"
+        />
+          </div>
+       </td>
+       <td>Emmanuel Okeke Justus</td>
+       <td>emmanueljudtud@example.com</td>
+       <td>23</td>
+       <td>+233-123-456-789</td>
+       <td>22/05/2021</td>
+       <td>Admin</td>
+       <td>Active</td>
+       <td>
+          <div class="action-btn">
+             <span class="material-symbols-outlined visibility">visibility</span>
+             <span class="material-symbols-outlined edit">border_color</span>
+             <span class="material-symbols-outlined delete">delete</span>
+          </div>
+       </td>
+    </tr>
+    <tr>
+       <td>
+          <div class="image-container-data">
+              <img 
+          src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
+          alt="User Profile"
+          class="profile-pic" id="user-id"
+        />
+          </div>
+       </td>
+       <td>Emmanuel Okeke Justus</td>
+       <td>emmanueljudtud@example.com</td>
+       <td>23</td>
+       <td>+233-123-456-789</td>
+       <td>22/05/2021</td>
+       <td>Admin</td>
+       <td>Active</td>
+       <td>
+          <div class="action-btn">
+             <span class="material-symbols-outlined visibility">visibility</span>
+             <span class="material-symbols-outlined edit">border_color</span>
+             <span class="material-symbols-outlined delete">delete</span>
+          </div>
+       </td>
+    </tr>
+    <tr>
+       <td>
+          <div class="image-container-data">
+              <img 
+          src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
+          alt="User Profile"
+          class="profile-pic" id="user-id"
+        />
+          </div>
+       </td>
+       <td>Emmanuel Okeke Justus</td>
+       <td>emmanueljudtud@example.com</td>
+       <td>23</td>
+       <td>+233-123-456-789</td>
+       <td>22/05/2021</td>
+       <td>Admin</td>
+       <td>Active</td>
+       <td>
+          <div class="action-btn">
+             <span class="material-symbols-outlined visibility">visibility</span>
+             <span class="material-symbols-outlined edit">border_color</span>
+             <span class="material-symbols-outlined delete">delete</span>
+          </div>
+       </td>
+    </tr>
   </tbody>
         </table>
-<!-- Create User Modal -->
-<!-- <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <form id="create-user-form">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="createUserModalLabel">Add New User</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="user-name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="user-name" required />
-          </div>
-          <div class="mb-3">
-            <label for="user-email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="user-email" required />
-          </div>
-          <div class="mb-3">
-            <label for="user-role" class="form-label">Role</label>
-            <select class="form-select" id="user-role" required>
-              <option value="">Select Role</option>
-              <option value="Admin">Admin</option>
-              <option value="Editor">Editor</option>
-              <option value="Viewer">Viewer</option>
-            </select>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Create User</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div> -->
 
 
 

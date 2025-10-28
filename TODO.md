@@ -1,0 +1,2 @@
+- [x] Update general td styles in style.css: Remove background-color: red;, add proper padding, background, and font styles to match the dashboard theme.
+- [x] Add styles for .action-btn: Make it a flex container with spacing between icons, add hover effects, and cursor pointer for interactivity.

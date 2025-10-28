@@ -5,6 +5,7 @@
   --bg-sidebar: #4036c6;
   --bg-table-header: #374151;
   --bg-hover: #F3F4F6;
+  --bg-search: #eceaff;
 
   /* Text Colors */
   --logo-color: #ff9aba;
@@ -101,10 +102,10 @@ line-height: -1 !important;
     border-radius: 50px;
     outline: 0;
     border: 0;
-    background: var(--bg-hover);
+    background: var(--bg-search);
 }
 .search>span{
-    background: var(--bg-hover);
+    background: var(--bg-search);
     padding: 7px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -117,7 +118,7 @@ line-height: -1 !important;
     cursor: pointer;
 }
 .search>input:focus-visible{
-background: var(--bg-hover);
+background: var(--bg-search);
 }
 .search>input::placeholder{
 font-size: 13px;
@@ -133,5 +134,253 @@ padding: 0;
 }
 .left>span{
     cursor: pointer;
+}
+.roles{
+   background: #000; 
+   padding: 5px 0;
+}
+.filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 5px;
+    background: var(--bg-sidebar);
+    border: 0;
+    font-weight: 600;
+    color: var(--bg-body)
+}
+.btn>span{
+    font-size: 12px;
+    font-weight: 600;
+
+}
+.btn:hover{
+    background: var(--bg-search);
+    color: var(--bg-sidebar);
+    border: 0;
+}
+.btn1{
+    border: 1px solid var(--text-muted);
+    font-weight: 600;
+    color: var(--bg-body);
+    font-size: 12px;
+    padding: 5px;
+    color: var(--bg-table-header);
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+}
+.btn1:hover{
+    background-color: var(--bg-sidebar);
+    color: var(--bg-body);
+    border: 0;
+}
+.modal-header h5{
+    font-size: 14px;
+}
+.uploadimage{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.uploadimage>span{
+    font-size: 13px;
+    margin-top: 10px;
+    text-transform: capitalize;
+    color: var(--text-muted);
+}
+.image-container{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #000;
+    overflow: hidden;
+    align-items: center;
+}
+.image-container>img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.form{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+.form input{
+    width: 100%;
+    height: 35px;
+    padding: 0px 7px 0px 30px;
+    /* border-radius: 50px; */
+    outline: 0;
+    border: 0;
+    background: var(--bg-search);
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.form label{
+    font-size: 10px;
+    background:var(--bg-search);
+    margin-right: -25px;
+    z-index: 1000;
+    padding:10px;border-right: 1px solid var(--text-muted);
+    /* margin-top: 1px; */
+}
+select{
+    border: 1px solid var(--text-muted);
+    width: 100%;
+    padding: 5px;
+    border-radius: 3px;
+    color: var(--text-muted);
+    font-size: 13px;
+    outline: 0;
+
+}
+select>option{
+    /* background-color: red; */
+    font-size: 13px;
+}
+select > option{
+    font-size: 13px;
+    color: #111827;
+    background-color: #ffffff; /* desktop browsers will usually respect this */
+}
+.image-container-data{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    overflow: hidden;
+    align-items: center;
+}
+.image-container-data>img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+/* .action-btn {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.action-btn > span {
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+} */
+/* .action-btn > span:hover {
+    background-color: var(--bg-hover);
+} */
+.action-btn > .delete{
+    color: var(--danger);
+    
+}
+.action-btn > .edit{
+    color: var(--bg-sidebar);
+}
+
+/* table > thead{
+    font-size: 15px;
+}
+ td{
+    font-size: 13px;
+    padding: 8px;
+     background-color: var(--bg-sidebar); 
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+tbody tr:nth-child(odd) {
+  background-color: var(--bg-body); light row 
+}
+tbody tr:nth-child(even) {
+  background-color: rgba(64, 54, 198, 0.06); 
+}
+tbody tr:hover {
+  background-color: var(--bg-hover);
+} */
+
+/* ...existing code... */
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: var(--bg-search);
+    border-bottom: 2px solid #eceaff;
+}
+
+th {
+    color: var(--bg-table-header);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 12px 15px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eceaff;
+    font-size: 12px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Status styling */
+td:nth-child(8) {
+    font-weight: 500;
+    padding: 5px 15px;
+}
+
+td:nth-child(8):contains('Active') {
+    color: var(--success);
+    background-color: rgba(16, 185, 129, 0.1);
+    border-radius: 20px;
+    width: fit-content;
+}
+
+/* Role styling */
+td:nth-child(7) {
+    font-weight: 500;
+    color: var(--bg-sidebar);
+}
+
+/* Action buttons container */
+.action-btn {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    font-size: 12px;
+}
+.action-btn > span{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Hover effect */
+tbody tr:hover {
+    background-color: var(--bg-hover);
+    transition: background-color 0.2s ease;
 }
 

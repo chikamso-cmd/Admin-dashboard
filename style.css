@@ -1,4 +1,25 @@
 
+
+body {
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    .toggle-btn {
+      padding: 10px 20px;
+      margin: 20px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
 :root {
   /* Backgrounds */
   --bg-body: #F9FAFB;

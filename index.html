@@ -81,7 +81,7 @@
                 <span class="material-symbols-outlined">search</span>
             </div>
            <div class="left d-flex gap-2">
-                <span class="material-symbols-outlined fs-5">light_mode</span>
+                <span class="material-symbols-outlined fs-5 toggle-btn" onclick="toggleDarkMode()">light_mode</span>
                 <span class="material-symbols-outlined fs-5">notifications</span>
             <div class="admin d-flex">
                 <div class="adminprofile">
@@ -108,7 +108,7 @@
         <h2 class="fs-6 fw-bolder">Employee Management List </h2>
         <div class="filter">
             <div class="search">
-             <input type="search" name="search" id="filter" placeholder="Search here...">
+             <input type="search" name="search" id="filter" placeholder="Search here..." onkeydown="filterTable()" >
                 <span class="material-symbols-outlined">search</span>
             </div>
            
@@ -165,7 +165,7 @@
 
           <div class="mb-3 d-flex gap-3">
             <select id="user-status" required>
-              <option value="">Select Staus</option>
+              <option value="">Select Status</option>
               <option value="Admin">Active</option>
               <option value="Editor">Not Active</option>
             </select>
@@ -198,7 +198,7 @@
 
         <div id="user-table-container">
           <!-- Table will be injected here via JS -->
-           <table class="">
+           <table id="mytable">
   <thead>
     <tr>
       <th>ID</th>
@@ -252,7 +252,7 @@
         />
           </div>
        </td>
-       <td>Emmanuel Okeke Justus</td>
+       <td>Ademide Folarin</td>
        <td>emmanueljudtud@example.com</td>
        <td>23</td>
        <td>+233-123-456-789</td>
@@ -277,7 +277,7 @@
         />
           </div>
        </td>
-       <td>Emmanuel Okeke Justus</td>
+       <td>Nelson Nwafor</td>
        <td>emmanueljudtud@example.com</td>
        <td>23</td>
        <td>+233-123-456-789</td>
@@ -302,7 +302,7 @@
         />
           </div>
        </td>
-       <td>Emmanuel Okeke Justus</td>
+       <td>Ayoola Folawewo</td>
        <td>emmanueljudtud@example.com</td>
        <td>23</td>
        <td>+233-123-456-789</td>

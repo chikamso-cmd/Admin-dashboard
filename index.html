@@ -283,11 +283,9 @@
                   <th>Role</th>
                   <th>Status</th>
                 </tr>
-                <!-- <td>
- 
-</td> -->
-              </thead>
-              <tbody id="user-table-body">
+                <!-- <td></td> -->
+               </thead>
+                <tbody id="user-table-body">
                 <!-- Rows will be injected via JS -->
                 <tr>
                   <td>
@@ -308,177 +306,123 @@
                   <td>Admin</td>
                   <td>Active</td>
                   <td>
-                    <div class="action-btn">
-                      <span class="material-symbols-outlined visibility" id="openbtn" onclick="openModal()"
-                        >visibility</span
-                      >
-                      <!-- * view user information modal -->
-                       <div id="myModal" class="modal">
-                        
-                        <div class="modal-contents">
-     <span class="material-symbols-outlined close" id="closebtn" onclick="closeModal()">close</span>
-    <div class="image"><img id="modalImage" src="images/zach-miller-7VTplOGuEUY-unsplash.jpg" alt="Profile Image" style="width:70px; border-radius:50%; height: 70px; margin-bottom: 10px; margin-top: 10px;"></div>
-   <div class="modalcont mt-3">
-     <p><strong>Name: </strong><span id="modalName"></span></p>
-     <p><strong>Email: </strong><span id="modalEmail"></span></p>
-   </div>
-   <hr>
-   <div class="modalcont">
-     <p><strong>Phone:</strong><span id="modalPhone"></span></p>
-    <p><strong>Date Joined:</strong> <span id="modalDate"></span></p>
-   </div>
-    <hr>
-    
-    <div class="modalcont">
-      <p><strong>Role:</strong><span id="modalRole"></span></p>
-    <p><strong>Status:</strong><span id="modalStatus"></span></p>
-    </div>
-    <hr>
-     <button class="btn1 mt-3 mb-2" onclick="getModal()" >Edit</button>
-  </div>
-</div>  <!-- * view user information modal ends here-->
 
 
+              <div class="action-btn">
                 <!-- ! edit user information modal starts here -->
-                      <span class="material-symbols-outlined edit" onclick="openModal()"
+                      <span class="material-symbols-outlined edit" id="openEdit" 
                         >border_color</span
                       >
- <div id="myModal" class="modal">
+                    <div id="myEdit" class="editmodal">
                         
-                        <div class="modal-contents">
-     <span class="material-symbols-outlined close" id="closebtn" onclick="closeModal()">close</span>
-    <div class="image"><img id="modalImage" src="images/zach-miller-7VTplOGuEUY-unsplash.jpg" alt="Profile Image" style="width:70px; border-radius:50%; height: 70px; margin-bottom: 10px; margin-top: 10px;"></div>
-   <div class="modalcont mt-3">
-     <p><strong>Name: </strong><span id="modalName"></span></p>
-     <p><strong>Email: </strong><span id="modalEmail"></span></p>
+                        <div class="modal-contents" id="edit">
+                  
+                                  <div class="modal-head"></div>
+                                <div class="container modal-container-content">
+                              <div class="image-edit">
+                                <div class="modal-head-cont">
+                              <div class="modal-image"><img id="modalImage" src="images/zach-miller-7VTplOGuEUY-unsplash.jpg" alt="Profile Image"></div>
+                              <h3>Elena Flores</h3>
+                              <p>elenaflores@example.com</p>
+                                </div>
+                                          <label for="upload-image-edit" class="custom-button">
+                          <span class="material-symbols-outlined" >upload_file</span>
+                          Change Profile Picture
+                        </label>
+                        <input type="file" accept="image/*"  name="upload" id="upload-image-edit" hidden/>
+             </div>
+              <div class="edit-user-form">
+                <form action="">
+                  <div class="edit-userinfo">
+                    <div class="name">
+                  <label for="name">name</label>
+                  <input type="text" name="name" id="editName">
+                </div>
+                  <div class="name">
+                    <label for="email">email</label>
+                <input type="email" name="email" id="editEmail">
+                  </div>
+                  </div>
+                  <div class="edit-userinfo">
+                    <div class="name">
+                  <label for="contact">contact</label>
+                  <input type="text" name="contact" id="editContact">
+                </div>
+                  <div class="name">
+                    <label for="age">age</label>
+                <input type="text" name="age" id="editage">
+                  </div>
+                  </div>
+                  <div class="edit-userinfo">
+                    <div class="name">
+                  <label for="contact">role</label>
+                  <select name="select" id="selectRole" aria-placeholder="sect Employee role">
+                    <option value="select role">Select Role</option>
+                    <option value="developer">Developer</option>
+                    <option value="manager">Manager</option>
+                    <option value="assistant">Assistant</option>
+                    <option value="Data Analyst">Data Analyst</option>
+                  </select>
+                </div>
+      <div class="name">
+        <label for="status">Status</label>
+    <select name="select" id="selecStatus">
+        <option value="status">Select Status</option>
+        <option value="active">Active</option>
+        <option value="not active">Not Active</option>
+      </select>
+      </div>
+      </div>
+   
    </div>
-   <hr>
-   <div class="modalcont">
-     <p><strong>Phone:</strong><span id="modalPhone"></span></p>
-    <p><strong>Date Joined:</strong> <span id="modalDate"></span></p>
-   </div>
-    <hr>
-    
-    <div class="modalcont">
-      <p><strong>Role:</strong><span id="modalRole"></span></p>
-    <p><strong>Status:</strong><span id="modalStatus"></span></p>
-    </div>
-    <hr>
-     <button class="btn1 mt-3 mb-2" onclick="getModal()" >Edit</button>
+
+ <div class="buttons">
+      <button class="deletebtn mt-3 mb-2" id="delete_user">
+         <span class="material-symbols-outlined del"
+                        >delete</span
+                      >
+        delete user</button>
+     <div class="save-btn">
+      <button class="cancel mt-3 mb-2" id="cancel">cancel</button>
+     <button class="save mt-3 mb-2" id="save">save changes</button>
+     </div>
+     </div>
+    </form>
+     
+</div>
   </div>
 </div>  <!-- ! edit user information modal ends here-->
                       
 
 
 
-                      <span class="material-symbols-outlined delete"
-                        >delete</span
-                      >
+                      <span class="material-symbols-outlined delete" id="deleteUser">delete</span>
+
+                    <div id="myDelete" class="deletemodal">
+                        
+                      <div class="delete-contents" id="delete">
+                        <h4>are you sure you want to delete this user?</h4>
+   
+                        <div class="action-buttons">
+                         <button class="deleteEl"> yes</button>
+                          <button class="cancelEl" id="clear">no</button>
+                       </div>
+     
+                      </div>
+                    </div>
+
+    </div>  
+
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    <div class="image-container-data">
-                      <img
-                        src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
-                        alt="User Profile"
-                        class="profile-pic"
-                        id="user-id"
-                      />
-                    </div>
-                  </td>
-                  <td>Ademide Folarin</td>
-                  <td>ademidefola@example.com</td>
-                  <td>23</td>
-                  <td>+233-123-456-789</td>
-                  <td>22/05/2021</td>
-                  <td>Admin</td>
-                  <td>Active</td>
-                  <td>
-                    <div class="action-btn">
-                      <span class="material-symbols-outlined visibility"
-                        >visibility</span
-                      >
-                      <span class="material-symbols-outlined edit"
-                        >border_color</span
-                      >
-                      <span class="material-symbols-outlined delete"
-                        >delete</span
-                      >
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="image-container-data">
-                      <img
-                        src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
-                        alt="User Profile"
-                        class="profile-pic"
-                        id="user-id"
-                      />
-                    </div>
-                  </td>
-                  <td>Nelson Nwafor</td>
-                  <td>emmanueljudtud@example.com</td>
-                  <td>23</td>
-                  <td>+233-123-456-789</td>
-                  <td>22/05/2021</td>
-                  <td>Admin</td>
-                  <td>Active</td>
-                  <td>
-                    <div class="action-btn">
-                      <span class="material-symbols-outlined visibility"
-                        >visibility</span
-                      >
-                      <span class="material-symbols-outlined edit"
-                        >border_color</span
-                      >
-                      <span class="material-symbols-outlined delete"
-                        >delete</span
-                      >
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="image-container-data">
-                      <img
-                        src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
-                        alt="User Profile"
-                        class="profile-pic"
-                        id="user-id"
-                      />
-                    </div>
-                  </td>
-                  <td>Ayoola Folawewo</td>
-                  <td>emmanueljudtud@example.com</td>
-                  <td>23</td>
-                  <td>+233-123-456-789</td>
-                  <td>22/05/2021</td>
-                  <td>Admin</td>
-                  <td>Active</td>
-                  <td>
-                    <div class="action-btn">
-                      <span class="material-symbols-outlined visibility"
-                        >visibility</span
-                      >
-                      <span class="material-symbols-outlined edit"
-                        >border_color</span
-                      >
-                      <span class="material-symbols-outlined delete"
-                        >delete</span
-                      >
-                    </div>
-                  </td>
-                </tr>
+                
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    </div>
+    
 
     <script src="script.js"></script>
     <!-- Bootstrap 5 JavaScript Bundle -->

@@ -23,7 +23,7 @@ body.dark-mode {
   --bg-body: #f9fafb;
   --bg-sidebar: #4036c6;
   --bg-table-header: rgba(51, 50, 50, 0.431);
-  --bg-hover: #f3f4f6;
+  --bg-hover: #e7e8eb;
   --bg-search: hsla(246, 100%, 96%, 0.318);
   --icon-bg: #e2cefe;
 
@@ -474,16 +474,36 @@ tbody tr:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.5);
-    transition: 0.3s ease-in /* Dim background*/
+    transition: 0.3s ease /* Dim background*/
+  }
+  .modal.active{
+    display: block;
+      transform: scale(1);
+  }
+  .editmodal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    transition: 0.3s ease /* Dim background*/
+  }
+  .editmodal.active{
+    display: block;
+      transform: scale(1);
   }
 
   /* Modal content box */
   .modal-contents {
     background-color: #fff;
     margin: 5% auto;
-    padding: 20px;
+    padding: 3px;
     border-radius: 8px;
-    width: 400px;
+    width: 570px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: 0.3s ease-in 
   }
@@ -519,3 +539,206 @@ tbody tr:hover {
   font-size: 15px;
   text-align: right;
 }
+.modal-head{
+width: 100%;
+background: var(--bg-hover);
+height: 70px;
+border-radius: 5px;
+}
+.image-edit{
+margin-left: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.modal-head-cont h3{
+font-size: 15px;
+margin-top: 6px;
+margin-bottom: 0;
+}
+.modal-head-cont p{
+  font-size: 9px;
+  margin-top: 0;
+  padding: 0;
+}
+.profile-btn{
+  border: 0;
+  padding: 9px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.profile-btn:hover{
+  background: var(--bg-sidebar);
+  color: var(--text-light);
+}
+.modal-image{
+  border-radius: 50%;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin-top: -15px;
+  border: 4px solid var(--text-light);
+}
+.modal-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.edit-userinfo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.name{
+  display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ text-transform: capitalize;
+ width: 100%;
+ margin-bottom: 10px;
+}
+.name > input{
+  border-radius: 5px;
+  padding: 5px;
+  outline: 0;
+  border: 2px solid var(--bg-hover);
+  width: 100%;
+  background: var(--text-light);
+}
+.name > label{
+  padding-left: 3px;
+}
+.buttons{
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.save-btn{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  /* background: #000; */
+  width: 50%;
+}
+.deletebtn{
+  background: var(--warning-bg);
+  color: var(--danger);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  width: 23%;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+  gap: 5px;
+  text-transform: capitalize;
+  transition: 0.3s ease;
+}
+.deletebtn > span{
+font-size: 15px;
+}
+.deletebtn:hover{
+  background: var(--danger);
+  color: var(--text-light);
+}
+.cancel{
+padding: 8px;
+border-radius: 5px;
+width: 30%;
+text-transform: capitalize;
+border: 1px ssolid var(--bg-hover);
+transition: 0.3s ease;
+}
+.cancel:hover{
+  background: var(--bg-sidebar);
+  color: var(--text-light);
+}
+.save{
+padding: 8px;
+border-radius: 5px;
+width: 40%;
+text-transform: capitalize;
+border: 0;
+background: var(--bg-sidebar);
+color: var(--text-light);
+transition: 0.3s ease;
+}
+.save:hover{
+  background: var(--bg-search);
+  color: var(--bg-sidebar);
+}
+.deletemodal{
+  display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    transition: 0.3s ease 
+}
+.deletemodal.active{
+  display: block;
+  transition: 0.3s ease;
+}
+  .delete-contents{
+    background-color: var(--text-light);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    height: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease-in;
+    text-align: center;
+}
+  .delete-contents h4{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-top: 30px;
+}
+  .action-buttons{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 30px;
+    text-align: center;
+    margin: 50px 0px;
+}
+.deleteEl{
+  width: 20%;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  background: var(--warning-bg);
+  color: var(--danger);
+  text-transform: capitalize;
+  font-size: 15px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.deleteEl:hover{
+  background: var(--danger);
+  color: var(--text-light);
+}
+.cancelEl{
+  width: 20%;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  font-size: 15px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+.cancelEl:hover{
+  background: var(--bg-sidebar);
+  color: var(--text-light);
+}
+
+

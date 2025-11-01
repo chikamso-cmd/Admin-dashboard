@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+
+}
+button{
+    padding: 5px;
+    width: 20%;
+    margin: 20px;
+    border: 0;
+    background: rgb(5, 189, 30);
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+table{
+    width: 100%;
+    /* padding: 10px; */
+    font-weight: 600;
+}
+thead{
+    color: #fff;
+    height: 25px;
+    padding: 5px;
+    text-align: center;
+    background: #000000;
+}
+td{
+text-align: center;
+}
+tbody{
+    border: 3px solid #000;
+    background-color: pink;
+    color: #000;
+}
+

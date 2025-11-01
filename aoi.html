@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Users</h1>
+ 
+
+  <script>
+   const apiUrl = 'https://simple-api-endpoints.onrender.com/users';
+
+   //fetch users from the api 
+   fetch(apiUrl)
+   .then(response => {
+    if (!response.ok){
+      throw new Error(`HTTP error ${response.status}`);
+    };
+    // parse the json
+    return response.json()
+   })
+   .then(respData => {
+    console.log(respData.data);
+    const data = respData.data
+    data.forEach(element => {
+      // console.log(element)
+      tbBody.InnerHtml +=`
+        <tr>
+                  <td>
+                    <div class="image-container-data">
+                      ${element.id}
+                    </div>
+                  </td>
+                  <td>${element.name}</td>
+                  <td>emmanueljudtud@example.com</td>
+                  <td>23</td>
+                  <td>+233-123-456-789</td>
+                  <td>22/05/2021</td>
+                  <td>Admin</td>
+                  <td>Active</td>
+                  <td>
+
+
+              <div class="action-btn">
+                <!-- ! edit user information modal starts here -->
+                      <span class="material-symbols-outlined edit" id="openEdit" onclick="get_users()">border_color</span>
+                      <span class="material-symbols-outlined delete" id="deleteUser">delete</span>
+
+
+              </div>  
+
+                    </div>
+                  </td>
+                </tr>
+      `
+
+    });
+    
+   }) .catch(error => {
+    console.log('error', error)
+   })
+
+  
+  </script>
+</body>
+</html>

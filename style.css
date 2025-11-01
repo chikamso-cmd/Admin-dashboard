@@ -295,7 +295,7 @@ body.dark-mode {
   vertical-align: middle;
 }
 .form input {
-  width: 100%;
+  width: 16vw;
   height: 35px;
   padding: 0px 7px 0px 30px;
   /* border-radius: 50px; */
@@ -304,6 +304,7 @@ body.dark-mode {
   background: var(--bg-search);
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
+  font-size: 10px;
 }
 .form label {
   font-size: 10px;

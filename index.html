@@ -201,7 +201,7 @@
                       <div class="mb-3 d-flex gap-3">
                         <div class="form">
                           <label for="user-name">Name</label>
-                          <input type="text" id="user-name" required />
+                          <input type="text" id="user-name"/>
                         </div>
                         <div class="form">
                           <label for="email">Email</label>
@@ -209,7 +209,7 @@
                             type="text"
                             id="email"
                             autocomplete="on"
-                            required
+                            
                           />
                         </div>
                       </div>
@@ -217,22 +217,22 @@
                       <div class="mb-3 d-flex gap-3">
                         <div class="form">
                           <label for="contact">Contact</label>
-                          <input type="text" id="contact" required />
+                          <input type="text" id="contact"  />
                         </div>
                         <div class="form">
                           <label for="age">Age</label>
-                          <input type="text" id="age" required />
+                          <input type="text" id="age"  />
                         </div>
                       </div>
 
                       <div class="mb-3 d-flex gap-3">
-                        <select id="user-status" required>
+                        <select id="user-status" >
                           <option value="">Select Status</option>
                           <option value="Admin">Active</option>
                           <option value="Editor">Not Active</option>
                         </select>
 
-                        <select id="user-role" required>
+                        <select id="user-role" >
                           <option value="">Select Role</option>
                           <option value="Admin">Admin</option>
                           <option value="Editor">Editor</option>
@@ -247,20 +247,10 @@
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button
-                        class="btn1 mt-3 mb-2"
-                        data-bs-toggle="modal"
-                        data-bs-target="#createUserModal"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        class="btn2 mt-3 mb-2 w-20"
-                        data-bs-toggle="modal"
-                        data-bs-target="#createUserModal"
-                      >
-                        save
-                      </button>
+
+                      <button class="btn1 mt-3 mb-2" id="closeCreate">Cancel</button>
+                      <button type="submit" class="btn2 mt-3 mb-2 w-20" id="create_user">save</button>
+
                     </div>
                   </div>
                 </form>
@@ -268,52 +258,9 @@
             </div>
           </div> 
           <!--modal div ends here /-->
+<div class="action-btn">
 
-          <div id="user-table-container">
-            <!-- Table will be injected here via JS -->
-            <table id="mytable">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Age</th>
-                  <th>Contact</th>
-                  <th>Date Joined</th>
-                  <th>Role</th>
-                  <th>Status</th>
-                </tr>
-                <!-- <td></td> -->
-               </thead>
-                <tbody id="user-table-body">
-                <!-- Rows will be injected via JS -->
-                <tr>
-                  <td>
-                    <div class="image-container-data">
-                      <img
-                        src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
-                        alt="User Profile"
-                        class="profile-pic"
-                        id="user-id"
-                      />
-                    </div>
-                  </td>
-                  <td>Emmanuel Okeke Justus</td>
-                  <td>emmanueljudtud@example.com</td>
-                  <td>23</td>
-                  <td>+233-123-456-789</td>
-                  <td>22/05/2021</td>
-                  <td>Admin</td>
-                  <td>Active</td>
-                  <td>
-
-
-              <div class="action-btn">
-                <!-- ! edit user information modal starts here -->
-                      <span class="material-symbols-outlined edit" id="openEdit" 
-                        >border_color</span
-                      >
-                    <div id="myEdit" class="editmodal">
+  <div id="myEdit" class="editmodal">
                         
                         <div class="modal-contents" id="edit">
                   
@@ -383,21 +330,18 @@
                       >
         delete user</button>
      <div class="save-btn">
-      <button class="cancel mt-3 mb-2" id="cancel">cancel</button>
+      <button class="cancel mt-3 mb-2" id="cancel" onclick="closeModal()">cancel</button>
      <button class="save mt-3 mb-2" id="save">save changes</button>
      </div>
      </div>
     </form>
      
-</div>
-  </div>
-</div>  <!-- ! edit user information modal ends here-->
-                      
+        </div>
+         </div>
+        </div> 
+      <!-- ! edit user information modal ends here-->
 
-
-
-                      <span class="material-symbols-outlined delete" id="deleteUser">delete</span>
-
+            
                     <div id="myDelete" class="deletemodal">
                         
                       <div class="delete-contents" id="delete">
@@ -411,7 +355,57 @@
                       </div>
                     </div>
 
-    </div>  
+</div>
+
+
+
+
+          <div id="user-table-container">
+            <!-- Table will be injected here via JS -->
+            <table id="mytable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th>Contact</th>
+                  <th>Date Joined</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                </tr>
+                <!-- <td></td> -->
+               </thead>
+                <tbody id="user-table-body">
+                <!-- Rows will be injected via JS -->
+                <tr>
+                  <td>
+                    <div class="image-container-data">
+                      <img
+                        src="/images/zach-miller-7VTplOGuEUY-unsplash.jpg"
+                        alt="User Profile"
+                        class="profile-pic"
+                        id="user-id"
+                      />
+                    </div>
+                  </td>
+                  <td>Emmanuel Okeke Justus</td>
+                  <td>emmanueljudtud@example.com</td>
+                  <td>23</td>
+                  <td>+233-123-456-789</td>
+                  <td>22/05/2021</td>
+                  <td>Admin</td>
+                  <td>Active</td>
+                  <td>
+
+
+              <div class="action-btn">
+                <!-- ! edit user information modal starts here -->
+                      <span class="material-symbols-outlined edit" id="openEdit" onclick="get_users()">border_color</span>
+                      <span class="material-symbols-outlined delete" id="deleteUser">delete</span>
+
+
+              </div>  
 
                     </div>
                   </td>
@@ -425,6 +419,7 @@
     
 
     <script src="script.js"></script>
+    <script src="api.js"></script>
     <!-- Bootstrap 5 JavaScript Bundle -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
